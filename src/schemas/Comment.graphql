@@ -1,0 +1,36 @@
+# import CommentOrderByInput from '../../generated/prisma.graphql'
+# import User from './User.graphql'
+# import Post from './User.graphql'
+
+type Query {
+  comments(
+    first: Int
+    skip: Int
+    after: String
+    orderBy: CommentOrderByInput
+  ): [Comment!]!
+}
+
+type Mutation {
+  createComment(data: CreateCommentInput): Comment!
+  updateComment(id: ID!, data: UpdateCommentInput): Comment!
+  deleteComment(id: ID!): Comment!
+}
+
+type Comment {
+  id: ID!
+  text: String!
+  author: User!
+  post: Post!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+input CreateCommentInput {
+  text: String!
+  post: ID!
+}
+
+input UpdateCommentInput {
+  text: String
+}

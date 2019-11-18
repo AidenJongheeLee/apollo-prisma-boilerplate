@@ -1,0 +1,33 @@
+# import Post from './Post.graphql'
+# import Comment from './Comment.graphql'
+
+type Query {
+  users: [User!]!
+}
+
+type Mutation {
+  createUser(data: CreateUserInput!): AuthPayload!
+  updateUser(data: UpdateUserInput!): User!
+  deleteUser: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String
+  posts: [Post!]!
+  createdAt: Date!
+  updatedAt: Date!
+  comments: [Comment!]!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
+input UpdateUserInput {
+  name: String
+  email: String
+  password: String
+}

@@ -1,0 +1,43 @@
+# import PostOrderByInput from '../../generated/prisma.graphql'
+# import User from './User.graphql'
+# import Comment from './Comment.graphql'
+
+type Post {
+  id: ID!
+  title: String!
+  author: User!
+  body: String!
+  published: Boolean!
+  comments: [Comment!]!
+  updatedAt: Date!
+  createdAt: Date!
+}
+
+type Query {
+  posts(
+    first: Int
+    skip: Int
+    after: String
+    community: Boolean
+    orderBy: PostOrderByInput
+  ): [Post!]!
+  myPosts(first: Int, skip: Int, after: String): [Post!]!
+}
+
+type Mutation {
+  createPost(data: CreatePostInput): Post!
+  updatePost(id: ID!, data: UpdatePostInput): Post!
+  deletePost(id: ID!): Post!
+}
+
+input CreatePostInput {
+  title: String!
+  body: String!
+  published: Boolean
+}
+
+input UpdatePostInput {
+  title: String
+  body: String
+  published: Boolean
+}

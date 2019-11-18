@@ -1,0 +1,6 @@
+# import Query.*, Mutation.* from './User.graphql'
+# import Query.*, Mutation.* from './Auth.graphql'
+# import Query.*, Mutation.* from './Comment.graphql'
+# import Query.*, Mutation.* from './Post.graphql'
+
+scalar Date
