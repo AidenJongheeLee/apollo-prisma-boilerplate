@@ -31,4 +31,7 @@ PRISMA_ENDPOINT=<<PRISMA_ENDPOINT>>
 BCRYPT_SALT=<<BCRYPT_SALT>>
 JWT_SECRET=<<JWT_SECRET>>
 ```
-Prisma server runs in `http://localhost:4466` and Apollo server runs in `http://localhost:4000` This project uses prisma 1 prisma client. This will update wne prisma 2 release [Photon](https://photonjs.prisma.io/).
+Start server 
+Run `yarn dev` or `npm run dev`server runs in `http://localhost:4000/graphql`
+
+Prisma server runs in `http://localhost:4466` and Apollo server runs in `http://localhost:4000/graphql` This project uses prisma 1 prisma client. This will update wne prisma 2 release [Photon](https://photonjs.prisma.io/).
